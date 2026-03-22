@@ -1,15 +1,35 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+import java.util.Scanner;
+
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the first number:");
+        double num1 = scanner.nextDouble();
+        System.out.println("Enter the second number:");
+        double num2 = scanner.nextDouble();
+        System.out.println("Select the operation (+, -, *, /): ");
+        char operation = scanner.next().charAt(0);
+        scanner.close();
+        double result;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                        case '/':
+                            result = num1 / num2;
+                            break;
+                            default:
+                                System.out.println("Invalid operation");
+                                return;
         }
+        System.out.println("The result is: " + num1 + " " + operation + " " + num2 + ": " + result);
     }
 }
